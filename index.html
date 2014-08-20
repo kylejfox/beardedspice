@@ -4,13 +4,13 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>BeardedSpice: Mac Media Keys for the Masses</title>
+    <title>Beardedspice by beardedspice</title>
   </head>
 
   <body>
@@ -18,11 +18,13 @@
       <div class="inner">
 
         <header>
-          <h1>BeardedSpice</h1>
+          <h1>Beardedspice</h1>
           <h2>Mac Media Keys for the Masses</h2>
         </header>
 
         <section id="downloads" class="clearfix">
+          <a href="https://github.com/beardedspice/beardedspice/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/beardedspice/beardedspice/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
           <a href="https://github.com/beardedspice/beardedspice" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
 
@@ -32,9 +34,11 @@
           <h1>
 <a name="download" class="anchor" href="#download"><span class="octicon octicon-link"></span></a>Download</h1>
 
-<p>Download the <a href="https://github.com/beardedspice/beardedspice/raw/releases/BeardedSpice-0.1.0.dmg">latest release</a>, or find all released binaries <a href="https://github.com/beardedspice/beardedspice/tree/releases">here</a>.</p>
+<p>Download the <a href="https://github.com/beardedspice/beardedspice/raw/releases/BeardedSpice-370342f1b1.app.tar.gz">latest release</a>, or find all released binaries <a href="https://github.com/beardedspice/beardedspice/tree/releases">here</a>.</p>
 
 <p>Mac OS X 10.7 or greater required.</p>
+
+<p><a href="https://travis-ci.org/beardedspice/beardedspice"><img src="https://travis-ci.org/beardedspice/beardedspice.png" alt="travis-ci"></a></p>
 
 <h1>
 <a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h1>
@@ -44,19 +48,43 @@
 <p>BeardedSpice is a menubar application for Mac OSX that allows you to control web based media players with the media keys found on Mac keyboards. It is an extensible application that works with Chrome and Safari, and can control any tab with an applicable media player. BeardedSpice currently supports:</p>
 
 <ul>
-<li>YouTube</li>
-<li>HypeMachine</li>
-<li>Spotify (Web)</li>
-<li>Pandora</li>
-<li>BandCamp</li>
-<li>GrooveShark</li>
-<li>SoundCloud</li>
-<li>Last.fm</li>
-<li>Google Music</li>
-<li>Rdio</li>
+<li><a href="http://8tracks.com">8Tracks</a></li>
+<li><a href="https://amazon.com/gp/dmusic/cloudplayer/player">Amazon Music</a></li>
+<li><a href="http://bandcamp.com">BandCamp</a></li>
+<li><a href="http://listen.beatsmusic.com">BeatsMusic</a></li>
+<li><a href="http://bop.fm">Bop.fm</a></li>
+<li><a href="https://play.google.com/music/">Google Music</a></li>
+<li><a href="http://grooveshark.com">GrooveShark</a></li>
+<li><a href="http://hypem.com">HypeMachine</a></li>
+<li><a href="http://last.fm">Last.fm</a></li>
+<li><a href="http://mixcloud.com">Mixcloud</a></li>
+<li><a href="https://music.sonyentertainmentnetwork.com">Music Unlimited </a></li>
+<li><a href="http://pandora.com">Pandora</a></li>
+<li><a href="http://rdio.com">Rdio</a></li>
+<li><a href="http://shuffler.fm/tracks">Shuffler.fm</a></li>
+<li><a href="http://slacker.com">Slacker</a></li>
+<li><a href="http://songza.com">Songza</a></li>
+<li><a href="https://soundcloud.com">SoundCloud</a></li>
+<li><a href="https://play.spotify.com">Spotify (Web)</a></li>
+<li><a href="http://synology.com">Synology</a></li>
+<li><a href="http://music.xbox.com">XboxMusic</a></li>
+<li><a href="http://youtube.com">YouTube</a></li>
+<li><a href="http://vk.com">VK ("My Music" from vk.com)</a></li>
+<li><a href="http://vimeo.com">Vimeo</a></li>
 </ul><p>If you want another supported app supported, simply open an issue with the tag 'app support'. Or, if you are feeling extra feisty, implement the handler yourself!</p>
 
-<p>BeardedSpice is built with <a href="https://github.com/nevyn/SPMediaKeyTap">SPMediaKeyTap</a> and works well with other applications listening to media key events. <strong>NOTE</strong>: We've asked nevyn to update the SPMediaKeyTap whitelist. While BeardedSpice is not on the whitelist, media key events may not propogate to BeardedSpice. You'll need to keep your Spotify application closed in the meantime.</p>
+<p>BeardedSpice is built with <a href="https://github.com/nevyn/SPMediaKeyTap">SPMediaKeyTap</a> and works well with other applications listening to media key events.</p>
+
+<h2>
+<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<p>We use <a href="http://cocoapods.org/">CocoaPods</a> to manage all obj-c/cocoa dependences. Install them locally using:</p>
+
+<div class="highlight highlight-bash"><pre>sudo gem install cocoapods
+pod install
+</pre></div>
+
+<p><em>Always</em> use BeardedSpice.xcworkspace for development, <em>not</em> BeardedSpice.xcodeproject</p>
 
 <h2>
 <a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
@@ -78,15 +106,15 @@
 
 <p>Media controllers are written as <a href="https://github.com/beardedspice/beardedspice/blob/master/BeardedSpice/MediaStrategy.h">strategies</a>. Each strategy defines a collection of Javascript functions to be excecuted on particular webpages.</p>
 
-<div class="highlight highlight-Objective-C"><pre><span class="k">@interface</span> <span class="nc">MediaStrategy</span> : <span class="nc">NSObject</span>
+<div class="highlight highlight-Objective-C"><pre><span class="k">@interface</span> <span class="nc">MediaStrategy</span> : <span class="bp">NSObject</span>
 
-<span class="k">-</span><span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span> <span class="nf">accepts:</span><span class="p">(</span><span class="kt">id</span> <span class="o">&lt;</span><span class="n">Tab</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">tab</span><span class="p">;</span>
-<span class="k">-</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">displayName</span><span class="p">;</span>
+<span class="p">-(</span><span class="kt">BOOL</span><span class="p">)</span> <span class="nf">accepts:</span><span class="p">(</span><span class="kt">id</span> <span class="o">&lt;</span><span class="n">Tab</span><span class="o">&gt;</span><span class="p">)</span> <span class="nv">tab</span><span class="p">;</span>
+<span class="p">-(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">displayName</span><span class="p">;</span>
 
-<span class="k">-</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">toggle</span><span class="p">;</span>
-<span class="k">-</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">previous</span><span class="p">;</span>
-<span class="k">-</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">next</span><span class="p">;</span>
-<span class="k">-</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">pause</span><span class="p">;</span>
+<span class="p">-(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">toggle</span><span class="p">;</span>
+<span class="p">-(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">previous</span><span class="p">;</span>
+<span class="p">-(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">next</span><span class="p">;</span>
+<span class="p">-(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">pause</span><span class="p">;</span>
 
 <span class="k">@end</span>
 </pre></div>
@@ -97,41 +125,41 @@
 
 <div class="highlight highlight-Objective-C"><pre><span class="k">@implementation</span> <span class="nc">GrooveSharkStrategy</span>
 
-<span class="k">-</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span> <span class="nf">init</span>
+<span class="p">-(</span><span class="kt">id</span><span class="p">)</span> <span class="nf">init</span>
 <span class="p">{</span>
-    <span class="n">self</span> <span class="o">=</span> <span class="p">[</span><span class="n">super</span> <span class="n">init</span><span class="p">];</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">predicate</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSPredicate</span> <span class="n">predicateWithFormat</span><span class="o">:</span><span class="s">@"SELF LIKE[c] '*grooveshark.com*'"</span><span class="p">];</span>
+    <span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">super</span> <span class="n">init</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">predicate</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSPredicate</span> <span class="nl">predicateWithFormat</span><span class="p">:</span><span class="s">@"SELF LIKE[c] '*grooveshark.com*'"</span><span class="p">];</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="n">self</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">-</span><span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span> <span class="nf">accepts:</span><span class="p">(</span><span class="kt">id</span> <span class="o">&lt;</span><span class="n">Tab</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">tab</span>
+<span class="p">-(</span><span class="kt">BOOL</span><span class="p">)</span> <span class="nf">accepts:</span><span class="p">(</span><span class="kt">id</span> <span class="o">&lt;</span><span class="n">Tab</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">tab</span>
 <span class="p">{</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">predicate</span> <span class="n">evaluateWithObject</span><span class="o">:</span><span class="p">[</span><span class="n">tab</span> <span class="n">URL</span><span class="p">]];</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">predicate</span> <span class="nl">evaluateWithObject</span><span class="p">:[</span><span class="n">tab</span> <span class="n">URL</span><span class="p">]];</span>
 <span class="p">}</span>
 
-<span class="k">-</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">toggle</span>
+<span class="p">-(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">toggle</span>
 <span class="p">{</span>
-    <span class="k">return</span> <span class="s">@"(function(){return window.Grooveshark.toggle()})()"</span><span class="p">;</span>
+    <span class="k">return</span> <span class="s">@"(function(){return window.Grooveshark.togglePlayPause()})()"</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">-</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">previous</span>
+<span class="p">-(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">previous</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="s">@"(function(){return window.Grooveshark.previous()})()"</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">-</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">next</span>
+<span class="p">-(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">next</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="s">@"(function(){return window.Grooveshark.next()})()"</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">-</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">pause</span>
+<span class="p">-(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">pause</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="s">@"(function(){return window.Grooveshark.pause()})()"</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">-</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">displayName</span>
+<span class="p">-(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nf">displayName</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="s">@"Grooveshark"</span><span class="p">;</span>
 <span class="p">}</span>
@@ -141,9 +169,9 @@
 
 <p>Update the <a href="https://github.com/beardedspice/beardedspice/blob/master/BeardedSpice/MediaStrategyRegistry.m"><code>MediaStrategyRegistry</code></a> to include an instance of your new strategy:</p>
 
-<div class="highlight highlight-Objective-C"><pre><span class="k">+</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span> <span class="nf">getDefaultMediaStrategies</span>
+<div class="highlight highlight-Objective-C"><pre><span class="p">+(</span><span class="bp">NSArray</span> <span class="o">*</span><span class="p">)</span> <span class="nf">getDefaultMediaStrategies</span>
 <span class="p">{</span>
-        <span class="n">DefaultMediaStrategies</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSArray</span> <span class="n">arrayWithObjects</span><span class="o">:</span>
+        <span class="n">DefaultMediaStrategies</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSArray</span> <span class="nl">arrayWithObjects</span><span class="p">:</span>
                                   <span class="c1">// ...</span>
                                   <span class="p">[[</span><span class="n">GoogleMusicStrategy</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">],</span>
                                   <span class="p">[[</span><span class="n">RdioStrategy</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">],</span>
@@ -160,7 +188,7 @@
 
 <ul>
 <li><a href="https://twitter.com/chedkid">@chedkid</a></li>
-<li><a href="https://twitter.com/_trhodes_">@_trhodes_</a></li>
+<li><a href="https://twitter.com/trhodeos">@trhodeos</a></li>
 </ul>
         </section>
 
