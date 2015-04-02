@@ -788,8 +788,7 @@ header p {
   right: 7px;
   top: 7px;
   display: block;
-  background: url(../images/logo36@2x.png);
-  background-size: cover;
+  background: url(../images/octocat-logo.png);
 }
 
 section {
