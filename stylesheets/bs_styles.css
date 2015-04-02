@@ -1,0 +1,36 @@
+
+#banner #logo {
+  position: absolute;
+  height: 36px;
+  width: 36px;
+  right: 7px;
+  top: 7px;
+  display: block;
+  background: url(../images/logo36@2x.png);
+  background-size: cover;
+}
+
+#services {
+    
+    margin: 0 0 20px;
+}
+
+#services ul {
+    
+    margin: auto;
+}
+
+@media all and (min-width: 480px) {
+    
+    #services {
+        overflow: auto;
+    }
+    #col-left {
+        width: 50%;
+        float: left;
+    }
+    #col-right {
+        width: 50%;
+        float: right;
+    }
+}
