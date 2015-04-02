@@ -110,75 +110,75 @@ pod install</pre></div>
 
 <p>Media controllers are written as <a href="https://github.com/beardedspice/beardedspice/blob/master/BeardedSpice/MediaStrategy.h">strategies</a>. Each strategy defines a collection of Javascript functions to be excecuted on particular webpages.</p>
 
-<div class="highlight highlight-Objective-C"><pre><span class="pl-st">@interface</span> <span class="pl-en">MediaStrategy</span> : <span class="pl-e">NSObject</span>
+<div class="highlight highlight-Objective-C"><pre><span class="pl-k">@interface</span> <span class="pl-en">MediaStrategy</span> : <span class="pl-e">NSObject</span>
 
--(<span class="pl-st">BOOL</span>) <span class="pl-en">accepts</span><span class="pl-en">:</span>(<span class="pl-st">id</span> &lt;Tab&gt;) <span class="pl-vpf">tab</span>;
--(<span class="pl-s3">NSString</span> *) <span class="pl-en">displayName</span>;
+-(<span class="pl-k">BOOL</span>) <span class="pl-en">accepts</span><span class="pl-en">:</span>(<span class="pl-k">id</span> &lt;Tab&gt;) <span class="pl-smi">tab</span>;
+-(<span class="pl-c1">NSString</span> *) <span class="pl-en">displayName</span>;
 
--(<span class="pl-s3">NSString</span> *) <span class="pl-en">toggle</span>;
--(<span class="pl-s3">NSString</span> *) <span class="pl-en">previous</span>;
--(<span class="pl-s3">NSString</span> *) <span class="pl-en">next</span>;
--(<span class="pl-s3">NSString</span> *) <span class="pl-en">pause</span>;
+-(<span class="pl-c1">NSString</span> *) <span class="pl-en">toggle</span>;
+-(<span class="pl-c1">NSString</span> *) <span class="pl-en">previous</span>;
+-(<span class="pl-c1">NSString</span> *) <span class="pl-en">next</span>;
+-(<span class="pl-c1">NSString</span> *) <span class="pl-en">pause</span>;
 
-<span class="pl-st">@end</span></pre></div>
+<span class="pl-k">@end</span></pre></div>
 
 <p>The <code>accepts</code> method takes a <code>Tab</code> object and returns <code>YES</code> if the strategy can control the given tab. <code>displayName</code> must return a unique string describing the controller and will be used as the name shown in the Preferences panel. All other functions return a Javascript function for the particular action. <code>pause</code> is a special case and is used when changing the active tab.</p>
 
 <p>A sample strategy for GrooveShark:</p>
 
-<div class="highlight highlight-Objective-C"><pre><span class="pl-st">@implementation</span> <span class="pl-en">GrooveSharkStrategy</span>
+<div class="highlight highlight-Objective-C"><pre><span class="pl-k">@implementation</span> <span class="pl-en">GrooveSharkStrategy</span>
 
--(<span class="pl-st">id</span>) <span class="pl-en">init</span>
+-(<span class="pl-k">id</span>) <span class="pl-en">init</span>
 {
-    self = [<span class="pl-v">super</span> <span class="pl-s3">init</span>];
+    self = [<span class="pl-v">super</span> <span class="pl-c1">init</span>];
     <span class="pl-k">if</span> (self) {
-        predicate = [<span class="pl-s3">NSPredicate</span> <span class="pl-s3">predicateWithFormat:</span><span class="pl-s1"><span class="pl-pds">@"</span><span class="pl-c1">SELF</span> LIKE[c] '*grooveshark.com*'<span class="pl-pds">"</span></span>];
+        predicate = [<span class="pl-c1">NSPredicate</span> <span class="pl-c1">predicateWithFormat:</span><span class="pl-s"><span class="pl-pds">@"</span><span class="pl-c1">SELF</span> LIKE[c] '*grooveshark.com*'<span class="pl-pds">"</span></span>];
     }
     <span class="pl-k">return</span> self;
 }
 
--(<span class="pl-st">BOOL</span>) <span class="pl-en">accepts</span><span class="pl-en">:</span>(<span class="pl-st">id</span> &lt;Tab&gt;)<span class="pl-vpf">tab</span>
+-(<span class="pl-k">BOOL</span>) <span class="pl-en">accepts</span><span class="pl-en">:</span>(<span class="pl-k">id</span> &lt;Tab&gt;)<span class="pl-smi">tab</span>
 {
-    <span class="pl-k">return</span> [predicate <span class="pl-s3">evaluateWithObject:</span>[tab <span class="pl-s3">URL</span>]];
+    <span class="pl-k">return</span> [predicate <span class="pl-c1">evaluateWithObject:</span>[tab <span class="pl-c1">URL</span>]];
 }
 
--(<span class="pl-s3">NSString</span> *) <span class="pl-en">toggle</span>
+-(<span class="pl-c1">NSString</span> *) <span class="pl-en">toggle</span>
 {
-    <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">@"</span>(function(){return window.Grooveshark.togglePlayPause()})()<span class="pl-pds">"</span></span>;
+    <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">@"</span>(function(){return window.Grooveshark.togglePlayPause()})()<span class="pl-pds">"</span></span>;
 }
 
--(<span class="pl-s3">NSString</span> *) <span class="pl-en">previous</span>
+-(<span class="pl-c1">NSString</span> *) <span class="pl-en">previous</span>
 {
-    <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">@"</span>(function(){return window.Grooveshark.previous()})()<span class="pl-pds">"</span></span>;
+    <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">@"</span>(function(){return window.Grooveshark.previous()})()<span class="pl-pds">"</span></span>;
 }
 
--(<span class="pl-s3">NSString</span> *) <span class="pl-en">next</span>
+-(<span class="pl-c1">NSString</span> *) <span class="pl-en">next</span>
 {
-    <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">@"</span>(function(){return window.Grooveshark.next()})()<span class="pl-pds">"</span></span>;
+    <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">@"</span>(function(){return window.Grooveshark.next()})()<span class="pl-pds">"</span></span>;
 }
 
--(<span class="pl-s3">NSString</span> *) <span class="pl-en">pause</span>
+-(<span class="pl-c1">NSString</span> *) <span class="pl-en">pause</span>
 {
-    <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">@"</span>(function(){return window.Grooveshark.pause()})()<span class="pl-pds">"</span></span>;
+    <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">@"</span>(function(){return window.Grooveshark.pause()})()<span class="pl-pds">"</span></span>;
 }
 
--(<span class="pl-s3">NSString</span> *) <span class="pl-en">displayName</span>
+-(<span class="pl-c1">NSString</span> *) <span class="pl-en">displayName</span>
 {
-    <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">@"</span>Grooveshark<span class="pl-pds">"</span></span>;
+    <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">@"</span>Grooveshark<span class="pl-pds">"</span></span>;
 }
 
-<span class="pl-st">@end</span></pre></div>
+<span class="pl-k">@end</span></pre></div>
 
 <p>Update the <a href="https://github.com/beardedspice/beardedspice/blob/master/BeardedSpice/MediaStrategyRegistry.m"><code>MediaStrategyRegistry</code></a> to include an instance of your new strategy:</p>
 
-<div class="highlight highlight-Objective-C"><pre>+(<span class="pl-s3">NSArray</span> *) getDefaultMediaStrategies
+<div class="highlight highlight-Objective-C"><pre>+(<span class="pl-c1">NSArray</span> *) getDefaultMediaStrategies
 {
-        DefaultMediaStrategies = [<span class="pl-s3">NSArray</span> <span class="pl-s3">arrayWithObjects:</span>
+        DefaultMediaStrategies = [<span class="pl-c1">NSArray</span> <span class="pl-c1">arrayWithObjects:</span>
                                   <span class="pl-c">// ...</span>
-                                  [[GoogleMusicStrategy <span class="pl-s3">alloc</span>] <span class="pl-s3">init</span>],
-                                  [[RdioStrategy <span class="pl-s3">alloc</span>] <span class="pl-s3">init</span>],
+                                  [[GoogleMusicStrategy <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>],
+                                  [[RdioStrategy <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>],
                                   <span class="pl-c">// add your new strategy!</span>
-                                  [[GrooveSharkStrategy <span class="pl-s3">alloc</span>] <span class="pl-s3">init</span>],
+                                  [[GrooveSharkStrategy <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>],
                                   <span class="pl-c1">nil</span>];
 }</pre></div>
 
@@ -195,7 +195,7 @@ pod install</pre></div>
 
         <footer>
           BeardedSpice is maintained by <a href="https://github.com/beardedspice">beardedspice</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
         </footer>
 
                   <script type="text/javascript">
