@@ -18,18 +18,19 @@
   <body>
 
       <header>
+          <span id="bs-logo"></span>
         <h1>BeardedSpice</h1>
         <p>Mac Media Keys for the Masses</p>
       </header>
 
       <div id="banner">
-        <span id="logo"></span>
-
+          
         <a href="https://github.com/beardedspice/beardedspice" class="button fork"><strong>View On GitHub</strong></a>
         <div class="downloads">
           <span>Downloads:</span>
           <ul>
-            <li><a href="https://raw.github.com/beardedspice/beardedspice/distr/publish/releases/BeardedSpice-latest.zip" class="button">ZIP</a></li>
+            <li><a href="https://raw.github.com/beardedspice/beardedspice/distr/publish/releases/BeardedSpice-latest.zip" class="button">LATEST</a></li>
+            <li><a href="https://github.com/beardedspice/beardedspice/tree/distr/publish/releases" class="button">ALL</a></li>
           </ul>
         </div>
       </div><!-- end banner -->
@@ -89,20 +90,8 @@
 </div>
 </div>
 
-<p>If you want another supported app supported, simply open an issue with the tag 'app support'. Or, if you are feeling extra feisty, implement the handler yourself!</p>
-
-<p>BeardedSpice is built with <a href="https://github.com/nevyn/SPMediaKeyTap">SPMediaKeyTap</a> and works well with other applications listening to media key events.</p>
-
-<h2>
-<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h2>
-
-<p>We use <a href="http://cocoapods.org/">CocoaPods</a> to manage all obj-c/cocoa dependences. Install them locally using:</p>
-
-<div class="highlight highlight-bash"><pre>sudo gem install cocoapods
-pod setup
-pod install</pre></div>
-
-<p><em>Always</em> use BeardedSpice.xcworkspace for development, <em>not</em> BeardedSpice.xcodeproject</p>
+<p>If you want another supported app supported, simply open an issue with the tag 'app support'. Or, if you are feeling extra feisty, implement the handler yourself!
+<p>Read about the implementation of the Handler <a href="https://github.com/beardedspice/beardedspice#writing-a-handler">here</a>.</p>
 
 <h2>
 <a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
@@ -118,85 +107,6 @@ pod install</pre></div>
 <a id="disabling-certain-handlers" class="anchor" href="#disabling-certain-handlers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Disabling certain handlers</h3>
 
 <p>From the preferences menu, uncheck any types of webpages that you don't want BeardedSpice to have control over. By default, all implemented handlers are enabled.</p>
-
-<h2>
-<a id="writing-a-handler" class="anchor" href="#writing-a-handler" aria-hidden="true"><span class="octicon octicon-link"></span></a>Writing a Handler</h2>
-
-<p>Media controllers are written as <a href="https://github.com/beardedspice/beardedspice/blob/master/BeardedSpice/MediaStrategy.h">strategies</a>. Each strategy defines a collection of Javascript functions to be excecuted on particular webpages.</p>
-
-<div class="highlight highlight-Objective-C"><pre><span class="pl-k">@interface</span> <span class="pl-en">MediaStrategy</span> : <span class="pl-e">NSObject</span>
-
--(<span class="pl-k">BOOL</span>) <span class="pl-en">accepts</span><span class="pl-en">:</span>(<span class="pl-k">id</span> &lt;Tab&gt;) <span class="pl-smi">tab</span>;
--(<span class="pl-c1">NSString</span> *) <span class="pl-en">displayName</span>;
-
--(<span class="pl-c1">NSString</span> *) <span class="pl-en">toggle</span>;
--(<span class="pl-c1">NSString</span> *) <span class="pl-en">previous</span>;
--(<span class="pl-c1">NSString</span> *) <span class="pl-en">next</span>;
--(<span class="pl-c1">NSString</span> *) <span class="pl-en">pause</span>;
-
-<span class="pl-k">@end</span></pre></div>
-
-<p>The <code>accepts</code> method takes a <code>Tab</code> object and returns <code>YES</code> if the strategy can control the given tab. <code>displayName</code> must return a unique string describing the controller and will be used as the name shown in the Preferences panel. All other functions return a Javascript function for the particular action. <code>pause</code> is a special case and is used when changing the active tab.</p>
-
-<p>A sample strategy for GrooveShark:</p>
-
-<div class="highlight highlight-Objective-C"><pre><span class="pl-k">@implementation</span> <span class="pl-en">GrooveSharkStrategy</span>
-
--(<span class="pl-k">id</span>) <span class="pl-en">init</span>
-{
-    self = [<span class="pl-v">super</span> <span class="pl-c1">init</span>];
-    <span class="pl-k">if</span> (self) {
-        predicate = [<span class="pl-c1">NSPredicate</span> <span class="pl-c1">predicateWithFormat:</span><span class="pl-s"><span class="pl-pds">@"</span><span class="pl-c1">SELF</span> LIKE[c] '*grooveshark.com*'<span class="pl-pds">"</span></span>];
-    }
-    <span class="pl-k">return</span> self;
-}
-
--(<span class="pl-k">BOOL</span>) <span class="pl-en">accepts</span><span class="pl-en">:</span>(<span class="pl-k">id</span> &lt;Tab&gt;)<span class="pl-smi">tab</span>
-{
-    <span class="pl-k">return</span> [predicate <span class="pl-c1">evaluateWithObject:</span>[tab <span class="pl-c1">URL</span>]];
-}
-
--(<span class="pl-c1">NSString</span> *) <span class="pl-en">toggle</span>
-{
-    <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">@"</span>(function(){return window.Grooveshark.togglePlayPause()})()<span class="pl-pds">"</span></span>;
-}
-
--(<span class="pl-c1">NSString</span> *) <span class="pl-en">previous</span>
-{
-    <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">@"</span>(function(){return window.Grooveshark.previous()})()<span class="pl-pds">"</span></span>;
-}
-
--(<span class="pl-c1">NSString</span> *) <span class="pl-en">next</span>
-{
-    <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">@"</span>(function(){return window.Grooveshark.next()})()<span class="pl-pds">"</span></span>;
-}
-
--(<span class="pl-c1">NSString</span> *) <span class="pl-en">pause</span>
-{
-    <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">@"</span>(function(){return window.Grooveshark.pause()})()<span class="pl-pds">"</span></span>;
-}
-
--(<span class="pl-c1">NSString</span> *) <span class="pl-en">displayName</span>
-{
-    <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">@"</span>Grooveshark<span class="pl-pds">"</span></span>;
-}
-
-<span class="pl-k">@end</span></pre></div>
-
-<p>Update the <a href="https://github.com/beardedspice/beardedspice/blob/master/BeardedSpice/MediaStrategyRegistry.m"><code>MediaStrategyRegistry</code></a> to include an instance of your new strategy:</p>
-
-<div class="highlight highlight-Objective-C"><pre>+(<span class="pl-c1">NSArray</span> *) getDefaultMediaStrategies
-{
-        DefaultMediaStrategies = [<span class="pl-c1">NSArray</span> <span class="pl-c1">arrayWithObjects:</span>
-                                  <span class="pl-c">// ...</span>
-                                  [[GoogleMusicStrategy <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>],
-                                  [[RdioStrategy <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>],
-                                  <span class="pl-c">// add your new strategy!</span>
-                                  [[GrooveSharkStrategy <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>],
-                                  <span class="pl-c1">nil</span>];
-}</pre></div>
-
-<p>Finally, update the <a href="https://github.com/beardedspice/beardedspice/blob/master/BeardedSpice/BeardedSpiceUserDefaults.plist">default preferences plist</a> to include your strategy.</p>
 
 <h1>
 <a id="download" class="anchor" href="#download" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download</h1>
@@ -219,7 +129,7 @@ pod install</pre></div>
       </section>
       <footer>
         <p>Project maintained by <a href="https://github.com/beardedspice">beardedspice</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+        <p><small>Hosted on GitHub Pages<br/>Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
       </footer>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->

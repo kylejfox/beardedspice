@@ -1,13 +1,25 @@
+#bs-logo{
+    
+    width: 90px;
+    height: 90px;
+    background-image: url(../images/logo90@2x.png);
+    background-size: cover;
+    display: inline-block;
+    position: fixed;
+    margin-left: -225px;
+    margin-top: -10px;
+}
 
-#banner #logo {
-  position: absolute;
-  height: 36px;
-  width: 36px;
-  right: 7px;
-  top: 7px;
-  display: block;
-  background: url(../images/logo36@2x.png);
-  background-size: cover;
+#banner {
+    
+    margin-right: -350px;
+}
+
+#banner .downloads{
+    
+    right: 50%;
+    position: fixed;
+    margin-right: -325px;
 }
 
 #services {
@@ -18,6 +30,34 @@
 #services ul {
     
     margin: auto;
+}
+
+@media all and (max-width: 720px) {
+    
+    #banner .downloads{
+        
+        float: right;
+        display: inline-block;
+        margin-right: 0px;
+        right: 36px;
+    }
+    
+    #bs-logo{
+        
+        width: 56px;
+        height: 56px;
+        background-image: url(../images/logo56@2x.png);
+        background-size: cover;
+        margin-left: -160px;
+        margin-top: -8px;
+    }
+}
+@media all and (max-width: 480px){
+    
+    #bs-logo{
+        
+        display: none;
+    }
 }
 
 @media all and (min-width: 480px) {
