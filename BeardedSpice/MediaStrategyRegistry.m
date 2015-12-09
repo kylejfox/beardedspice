@@ -41,6 +41,7 @@
 #import "DeezerStrategy.h"
 #import "FocusAtWillStrategy.h"
 #import "PocketCastsStrategy.h"
+#import "RainwaveStrategy.h"
 #import "YandexRadioStrategy.h"
 #import "TidalHiFiStrategy.h"
 #import "NoAdRadioStrategy.h"
@@ -212,6 +213,7 @@
                        [PandoraStrategy new],
                        [PlexWebStrategy new],
                        [PocketCastsStrategy new],
+                       [RainwaveStrategy new],
                        [RdioStrategy new],
                        [RhapsodyStrategy new],
                        [SaavnStrategy new],

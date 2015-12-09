@@ -104,6 +104,7 @@
 		969E45721863E5830037226B /* LastFmStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 969E45711863E5830037226B /* LastFmStrategy.m */; };
 		9A699C4A188B051000BB647E /* SongzaStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A699C49188B051000BB647E /* SongzaStrategy.m */; };
 		9AF442D51886F71400CD7266 /* EightTracksStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF442D41886F71400CD7266 /* EightTracksStrategy.m */; };
+		AE4B2F371C17C4F900F0DBB3 /* RainwaveStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4B2F361C17C4F900F0DBB3 /* RainwaveStrategy.m */; };
 		B500FC3818D33F2E00FEFD74 /* YandexMusicStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = B500FC3718D33F2E00FEFD74 /* YandexMusicStrategy.m */; };
 		BB81E6321B8B3AA000F764EB /* NRKStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB81E6301B8B3AA000F764EB /* NRKStrategy.m */; };
 		BE0EC59E41539EF7C9368E11 /* YandexRadioStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0EC7F56FEF36DE52081CE1 /* YandexRadioStrategy.m */; };
@@ -336,6 +337,8 @@
 		9A699C49188B051000BB647E /* SongzaStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SongzaStrategy.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9AF442D31886F71400CD7266 /* EightTracksStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EightTracksStrategy.h; sourceTree = "<group>"; };
 		9AF442D41886F71400CD7266 /* EightTracksStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = EightTracksStrategy.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AE4B2F351C17C44E00F0DBB3 /* RainwaveStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RainwaveStrategy.h; sourceTree = "<group>"; };
+		AE4B2F361C17C4F900F0DBB3 /* RainwaveStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RainwaveStrategy.m; sourceTree = "<group>"; };
 		B500FC3618D33F2E00FEFD74 /* YandexMusicStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YandexMusicStrategy.h; sourceTree = "<group>"; };
 		B500FC3718D33F2E00FEFD74 /* YandexMusicStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = YandexMusicStrategy.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		BB81E6301B8B3AA000F764EB /* NRKStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRKStrategy.m; sourceTree = "<group>"; };
@@ -502,6 +505,8 @@
 				2B0FAF3A1B8612D900E80E4F /* PlexWebStrategy.m */,
 				32F131441A71B6090029E9EF /* PocketCastsStrategy.h */,
 				32F131451A71B6090029E9EF /* PocketCastsStrategy.m */,
+				AE4B2F351C17C44E00F0DBB3 /* RainwaveStrategy.h */,
+				AE4B2F361C17C4F900F0DBB3 /* RainwaveStrategy.m */,
 				031D8147187F982A00A93E00 /* RdioStrategy.h */,
 				031D8148187F982A00A93E00 /* RdioStrategy.m */,
 				50445D171AE7C9CB00A57315 /* SaavnStrategy.h */,
@@ -898,6 +903,7 @@
 				65E5670E1B76A07700AD2D46 /* BSMediaStrategyEnableButton.m in Sources */,
 				504B426D1AF00C2E00654297 /* OdnoklassnikiStrategy.m in Sources */,
 				651967C21AB3A0B200B48D3A /* iTunesTabAdapter.m in Sources */,
+				AE4B2F371C17C4F900F0DBB3 /* RainwaveStrategy.m in Sources */,
 				4DB2F13319DB987D0010D194 /* ChorusStrategy.m in Sources */,
 				039D83421892173600DB426D /* SlackerStrategy.m in Sources */,
 				9679333C1855173100A49AC7 /* main.m in Sources */,
