@@ -14,7 +14,7 @@
     self = [super init];
     if (self) {
         predicate =
-            [NSPredicate predicateWithFormat:@"SELF LIKE[c] '*rainwave.cc/beta*'"];
+            [NSPredicate predicateWithFormat:@"SELF LIKE[c] '*rainwave.cc/*'"];
     }
     return self;
 }
